@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>BelajarBot - Education Chatbot</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="app-header">
+      <div class="brand">
+        <span class="logo">📚</span>
+        <div>
+          <h1>BelajarBot</h1>
+          <p>Teman belajar berbasis AI (Gemini API)</p>
+        </div>
+      </div>
+      <button id="settingsBtn" class="icon-btn" title="Pengaturan API Key">⚙️</button>
+    </header>
+
+    <div class="controls">
+      <label for="subjectSelect">Mapel:</label>
+      <select id="subjectSelect">
+        <option value="umum">Umum</option>
+        <option value="matematika">Matematika</option>
+        <option value="sains">Sains (IPA)</option>
+        <option value="bahasa-inggris">Bahasa Inggris</option>
+        <option value="sejarah">Sejarah</option>
+        <option value="bahasa-indonesia">Bahasa Indonesia</option>
+      </select>
+
+      <label for="styleSelect">Gaya bahasa:</label>
+      <select id="styleSelect">
+        <option value="santai">Santai & ramah</option>
+        <option value="formal">Formal & to the point</option>
+      </select>
+
+      <button id="quizBtn" class="secondary-btn">📝 Buatkan Kuis</button>
+      <button id="clearBtn" class="secondary-btn">🗑️ Hapus Riwayat</button>
+    </div>
+
+    <main id="chatWindow" class="chat-window">
+      <div class="message bot">
+        <div class="bubble">
+          Hai! Aku <b>BelajarBot</b> 👋 Pilih mapel di atas, terus tanya apa aja yang mau kamu pelajari.
+          Aku juga bisa bikinin kuis latihan kalau kamu udah paham materinya. Yuk mulai belajar!
+        </div>
+      </div>
+    </main>
+
+    <form id="chatForm" class="chat-input-area">
+      <input
+        id="chatInput"
+        type="text"
+        placeholder="Tulis pertanyaanmu di sini..."
+        autocomplete="off"
+        required
+      />
+      <button type="submit" class="send-btn">Kirim</button>
+    </form>
+  </div>
+
+  <!-- Modal pengaturan API Key -->
+  <div id="settingsModal" class="modal hidden">
+    <div class="modal-content">
+      <h2>Pengaturan Gemini API Key</h2>
+      <p>
+        Masukkan API Key Gemini kamu (didapat gratis dari
+        <a href="https://aistudio.google.com/app/apikey" target="_blank">Google AI Studio</a>).
+        Key disimpan hanya di browser kamu sendiri (localStorage), tidak dikirim ke server manapun selain Google.
+      </p>
+      <input id="apiKeyInput" type="password" placeholder="Masukkan API Key di sini" />
+      <div class="modal-actions">
+        <button id="saveApiKeyBtn" class="send-btn">Simpan</button>
+        <button id="closeModalBtn" class="secondary-btn">Tutup</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

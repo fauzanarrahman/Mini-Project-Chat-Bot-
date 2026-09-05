@@ -1,7 +1,7 @@
 // ====== KONFIGURASI ======
 // Ganti nama model di sini jika Google merilis versi model baru.
 // Cek daftar model terbaru di https://ai.google.dev/gemini-api/docs/models
-const GEMINI_MODEL = "gemini-2.0-flash";
+const GEMINI_MODEL = "gemini-3.6-flash";
 const GEMINI_ENDPOINT = (apiKey) =>
   `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${apiKey}`;
 
